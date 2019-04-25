@@ -10,7 +10,7 @@
     "start": "APP_ENV=local W_FILE_HASH=true webpack-dev-server --mode development --disable-host-check --hot",
     "build:preview": "APP_ENV=preview W_FILE_HASH=true W_FILE_FLAT=true W_MODE=production webpack --mode production",
     "preview": "npm run build:preview && echo 'placeholder'",
-    "build:release": "APP_ENV=release W_FILE_HASH=true W_FILE_FLAT=true WCP_PUBLIC_PATH='' webpack --mode production",
+    "build:release": "APP_ENV=release W_FILE_HASH=true W_FILE_FLAT=true W_MODE=production WCP_PUBLIC_PATH='' webpack --mode production",
     "release": "yarn build:release && echo 'placeholder",
     "lint": "eslint 'src/**/*.js'"
   },
