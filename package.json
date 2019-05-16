@@ -1,7 +1,7 @@
 {
-  "name": "ft-examples",
-  "description": "Scaffold out a page supported by ft.",
-  "version": "0.3.0",
+  "name": "starter-vanilla-html5",
+  "description": "Scaffold out a page supported by vanilla HTML5.",
+  "version": "0.1.0",
   "private": true,
   "engines": {
     "node": ">=8"
@@ -11,7 +11,7 @@
     "build:preview": "APP_ENV=preview W_FILE_HASH=true W_FILE_FLAT=true W_MODE=production webpack --mode production",
     "preview": "npm run build:preview && echo 'placeholder'",
     "build:release": "APP_ENV=release W_FILE_HASH=true W_FILE_FLAT=true W_MODE=production WCP_PUBLIC_PATH='' webpack --mode production",
-    "release": "yarn build:release && echo 'placeholder",
+    "release": "yarn build:release && echo 'placeholder'",
     "lint": "eslint 'src/**/*.js'"
   },
   "keywords": [
