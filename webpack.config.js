@@ -19,14 +19,10 @@ function resolve(p) {
 }
 
 const PATH_SRC = resolve('src')
-const PATH_FT = resolve('node_modules/@2players/ft/src')
 
 const commonConfig = merge([
-  {
-    resolve: { alias: { ft: PATH_FT } },
-  },
   setupIO(resolve('src/index.js'), resolve('dist')),
-  loadJS({ include: [PATH_SRC, PATH_FT] }),
+  loadJS({ include: [PATH_SRC] }),
   loadHTML(resolve('src/index.html')),
   loadMedia(),
   loadEnvs(['APP_ENV']),
