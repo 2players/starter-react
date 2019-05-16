@@ -1,6 +1,6 @@
 {
   "name": "starter-vanilla-html5",
-  "description": "Scaffold out a page supported by vanilla HTML5.",
+  "description": "Scaffold out a common HTML5 page.",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -14,13 +14,7 @@
     "release": "yarn build:release && echo 'placeholder'",
     "lint": "eslint 'src/**/*.js'"
   },
-  "keywords": [
-    "HTML5",
-    "Webpack",
-    "PIXI",
-    "ft",
-    "FT"
-  ],
+  "keywords": [],
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
