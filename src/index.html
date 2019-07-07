@@ -5,16 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>Vanilla HTML5</title>
     <meta name="description" content="Scaffold out a common HTML5 page.">
+    <style>
+      .no-js-warning {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+      }
+    </style>
   </head>
   <body>
-    <!--[if lte IE 9]>
-      <p>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
     <noscript>
-      You need to enable JavaScript to run this app.
+      <div class="no-js-warning">
+        <p>JavaScript support is required.</p>
+        <p>需要开启 JavaScript。</p>
+      </div>
     </noscript>
 
     <div id="root"></div>
+
+    <% for (const js of htmlWebpackPlugin.files.js) {%>
+    <script type="text/javascript" src="<%= js %>"></script>
+    <% } %>
   </body>
 </html>
