@@ -9062,10 +9062,10 @@ webpack-cli@^3.3.4:
     v8-compile-cache "2.0.3"
     yargs "13.2.4"
 
-webpack-config-parts@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/webpack-config-parts/-/webpack-config-parts-7.0.1.tgz#0b90a41f3e18edadc2f0c26a9cb9332856fb0197"
-  integrity sha512-9bYVl41VjdyGoMEOFX46FqaK2ZkcchsbJsOwlxau2lnaOz/Pdx6BL/RyroQK0dlkW4xikPDOL/E5snaTBfKWiw==
+webpack-config-parts@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-config-parts/-/webpack-config-parts-7.1.0.tgz#686cd6984204616046443f1a711fb5b346a0a984"
+  integrity sha512-LMCSagB1HT9pQZKoCHhhjy1imOgoY83X7vGTHC7BD2XerIFjt2kuXfYkjWMFyIcGd2lcLReqDsMaZezWugINiA==
   dependencies:
     "@babel/core" "^7.5.0"
     "@svgr/webpack" "^4.3.1"
