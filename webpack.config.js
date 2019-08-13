@@ -24,7 +24,7 @@ function resolve(p) {
 
 const PATH_RES = resolve('res/')
 const PATH_ENTRY = resolve('src/index.html')
-const PATH_SRC_INDEX = resolve('src/index.js')
+const PATH_SRC_INDEX = resolve('src/index.jsx')
 const PATH_DIST = resolve('dist/')
 
 const commonConfig = [
