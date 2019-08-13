@@ -1,7 +1,7 @@
 /* eslint-env node */
 const path = require('path')
-const merge = require('webpack-merge')
 const {
+  merge,
   setupIO,
   setupDevServer,
   loadHTML,
