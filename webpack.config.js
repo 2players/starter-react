@@ -40,7 +40,6 @@ const commonConfig = [
 const developmentConfig = [...commonConfig, setupDevServer()]
 const productionConfig = [...commonConfig, minify(), cleanupBuild()]
 
-/* eslint-disable-next-line */
 module.exports = function(_, { mode } = { mode: 'NO_MODE' }) {
   const config = mode === 'production' ? productionConfig : developmentConfig
   return merge(config)
