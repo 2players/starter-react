@@ -12,7 +12,7 @@
     "preview": "npm run build:preview && echo 'placeholder'",
     "build:release": "APP_ENV=release W_PUBLIC_PATH='' webpack --mode production",
     "release": "npm run build:release && echo 'placeholder'",
-    "lint": "eslint 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.{js,jsx}'"
   },
   "keywords": [],
   "devDependencies": {
@@ -31,6 +31,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
@@ -54,7 +55,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/*.js": [
+    "**/*.{js,jsx}": [
       "eslint --fix --no-color",
       "git add"
     ]

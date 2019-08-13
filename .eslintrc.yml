@@ -6,6 +6,7 @@ extends:
   - plugin:import/errors
   - plugin:import/warnings
   - plugin:prettier/recommended
+  - plugin:react/recommended
 env:
   es6: true
   browser: true
@@ -15,3 +16,7 @@ rules:
   no-unused-vars:
     - "error"
     - { argsIgnorePattern: "^_" }
+settings:
+  react:
+    # for now, `version` field must be specified, it will default to `detect` later.
+    version: detect
