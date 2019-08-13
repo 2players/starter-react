@@ -7,6 +7,7 @@ const {
   setupDevServer,
   loadHTML,
   loadJS,
+  loadJSX,
   loadCSS,
   loadMedia,
   loadEnvs,
@@ -23,7 +24,6 @@ function resolve(p) {
 
 const PATH_RES = resolve('res/')
 const PATH_ENTRY = resolve('src/index.html')
-const PATH_SRC = resolve('src/')
 const PATH_SRC_INDEX = resolve('src/index.js')
 const PATH_DIST = resolve('dist/')
 
@@ -32,7 +32,8 @@ const commonConfig = [
   setupIO(PATH_SRC_INDEX, PATH_DIST),
   loadHTML(PATH_ENTRY),
   loadCSS(),
-  loadJS({ include: [PATH_SRC] }),
+  loadJS(),
+  loadJSX(),
   loadMedia(),
   loadEnvs(['APP_ENV']),
   forceCaseSensitivePath(),
