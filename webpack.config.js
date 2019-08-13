@@ -7,6 +7,7 @@ const {
   setupDevServer,
   loadHTML,
   loadJS,
+  loadReactCSSModule,
   loadJSX,
   loadMedia,
   loadEnvs,
@@ -27,42 +28,14 @@ const PATH_ENTRY = resolve('src/index.html')
 const PATH_SRC_INDEX = resolve('src/index.jsx')
 const PATH_DIST = resolve('dist/')
 
-function loadReactCSSModule() {
-  const { context, localIdentName } = sharedConfig.reactCSSModule
-
-  return {
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: [
-            {
-              loader: 'style-loader',
-            },
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-                modules: {
-                  context,
-                  localIdentName,
-                },
-              },
-            },
-          ],
-        },
-      ],
-    },
-  }
-}
-
+const { context, localIdentName } = sharedConfig.reactCSSModule
 const commonConfig = [
   { resolve: { alias: { res: PATH_RES } } },
   setupIO(PATH_SRC_INDEX, PATH_DIST),
   loadHTML(PATH_ENTRY),
   loadJS(),
   loadJSX(),
-  loadReactCSSModule(),
+  loadReactCSSModule(context, localIdentName),
   loadMedia(),
   loadEnvs(['APP_ENV']),
   forceCaseSensitivePath(),
