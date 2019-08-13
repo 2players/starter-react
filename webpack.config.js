@@ -8,7 +8,6 @@ const {
   loadHTML,
   loadJS,
   loadJSX,
-  loadCSS,
   loadMedia,
   loadEnvs,
   minify,
@@ -16,6 +15,7 @@ const {
   generateSourcemap,
   cleanupBuild,
 } = require('webpack-config-parts')
+const sharedConfig = require('./shared-config')
 
 function resolve(p) {
   const ROOT = path.resolve(__dirname)
@@ -27,13 +27,42 @@ const PATH_ENTRY = resolve('src/index.html')
 const PATH_SRC_INDEX = resolve('src/index.jsx')
 const PATH_DIST = resolve('dist/')
 
+function loadReactCSSModule() {
+  const { context, localIdentName } = sharedConfig.reactCSSModule
+
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: 'style-loader',
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                modules: {
+                  context,
+                  localIdentName,
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+  }
+}
+
 const commonConfig = [
   { resolve: { alias: { res: PATH_RES } } },
   setupIO(PATH_SRC_INDEX, PATH_DIST),
   loadHTML(PATH_ENTRY),
-  loadCSS(),
   loadJS(),
   loadJSX(),
+  loadReactCSSModule(),
   loadMedia(),
   loadEnvs(['APP_ENV']),
   forceCaseSensitivePath(),

@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Page from './Page'
 
 import 'normalize.css'
-import './global.css'
 
 function App() {
-  return <p>Hello World!</p>
+  return <Page />
 }
 
 const root = document.body.querySelector('#root')
