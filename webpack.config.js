@@ -21,12 +21,14 @@ function resolve(p) {
   return path.resolve(ROOT, p)
 }
 
+const PATH_RES = resolve('res/')
 const PATH_ENTRY = resolve('src/index.html')
-const PATH_SRC = resolve('src')
+const PATH_SRC = resolve('src/')
 const PATH_SRC_INDEX = resolve('src/index.js')
-const PATH_DIST = resolve('dist')
+const PATH_DIST = resolve('dist/')
 
 const commonConfig = [
+  { resolve: { alias: { res: PATH_RES } } },
   setupIO(PATH_SRC_INDEX, PATH_DIST),
   loadHTML(PATH_ENTRY),
   loadCSS(),
