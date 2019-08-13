@@ -12,3 +12,6 @@ env:
 rules:
   semi: off
   import/no-unresolved: off
+  no-unused-vars:
+    - "error"
+    - { argsIgnorePattern: "^_" }
