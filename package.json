@@ -7,33 +7,35 @@
     "node": ">=8"
   },
   "scripts": {
-    "start": "APP_ENV=local W_FILE_HASH=true webpack-dev-server --mode development --disable-host-check --hot",
+    "start": "APP_ENV=local W_FILE_HASH=true webpack-dev-server --mode development --hot",
     "build:preview": "APP_ENV=preview W_FILE_HASH=true W_FILE_FLAT=true W_MODE=production webpack --mode production",
     "preview": "npm run build:preview && echo 'placeholder'",
     "build:release": "APP_ENV=release W_FILE_HASH=true W_FILE_FLAT=true W_MODE=production WCP_PUBLIC_PATH='' webpack --mode production",
-    "release": "yarn build:release && echo 'placeholder'",
+    "release": "npm run build:release && echo 'placeholder'",
     "lint": "eslint 'src/**/*.js'"
   },
   "keywords": [],
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.1.4",
-    "eslint": "^6.0.1",
+    "core-js": "^3.2.1",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^2.7.0",
-    "lint-staged": "^8.2.1",
+    "husky": "^3.0.3",
+    "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
-    "regenerator-runtime": "^0.13.2",
+    "regenerator-runtime": "^0.13.3",
     "scriptjs": "^2.5.9",
-    "webpack-config-parts": "^6.2.1",
+    "webpack-config-parts": "^6.2.2",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
@@ -41,19 +43,23 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged --quiet",
+      "commit-msg": "commitlint --color false --env HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*.{json,md}": [
-        "prettier --write",
-        "git add"
-      ],
-      "**/*.js": [
-        "eslint --fix",
-        "git add"
-      ]
-    }
+    "**/*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.js": [
+      "eslint --fix --no-color",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
