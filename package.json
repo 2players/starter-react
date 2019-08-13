@@ -1,6 +1,6 @@
 {
-  "name": "starter-vanilla-html5",
-  "description": "Scaffold out a common HTML5 page.",
+  "name": "starter-react",
+  "description": "Scaffold out a common React page.",
   "version": "0.1.0",
   "private": true,
   "engines": {

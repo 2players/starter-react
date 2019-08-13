@@ -1,3 +1,3 @@
-# Starter Vanilla HTML5
+# Starter React
 
-> Scaffold out a common HTML5 page.
+> Scaffold out a common React page.
